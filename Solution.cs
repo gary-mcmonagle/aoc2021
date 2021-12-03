@@ -1,3 +1,4 @@
-public interface Solution {
+public interface Solution
+{
     void Solve();
 }
