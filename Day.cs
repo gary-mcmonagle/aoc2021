@@ -1,6 +1,5 @@
 public abstract class Day
 {
-    private int solving;
     public abstract void SolvePartOne();
     public abstract void SolvePartTwo();
 

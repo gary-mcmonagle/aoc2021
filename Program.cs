@@ -13,6 +13,9 @@
             case 2:
                 day = new DayTwo();
                 break;
+            case 3:
+                day = new DayThree();
+                break;
         }
 
         day.Solve(partNo);
