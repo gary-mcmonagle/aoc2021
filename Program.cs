@@ -1,23 +1,16 @@
-﻿internal class CommandLine
+﻿using NumericWordsConversion;
+
+internal class CommandLine
 {
     private static void Main(string[] args)
     {
+        NumericWordsConverter converter = new();
         var dayNo = int.Parse(args[0]);
+        var dayWord = converter.ToWords(dayNo);
+        string objectToInstantiate = $"Day{dayWord}";
+        var objectType = Type.GetType(objectToInstantiate);
+        dynamic instantiatedObject = Activator.CreateInstance(objectType);
         var partNo = int.Parse(args[1]);
-        Day day = new DayOne();
-        switch (dayNo)
-        {
-            case 1:
-                day = new DayOne();
-                break;
-            case 2:
-                day = new DayTwo();
-                break;
-            case 3:
-                day = new DayThree();
-                break;
-        }
-
-        day.Solve(partNo);
+        instantiatedObject.Solve(partNo);
     }
 }
